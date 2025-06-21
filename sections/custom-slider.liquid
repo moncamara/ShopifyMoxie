@@ -1,0 +1,88 @@
+{{ 'section.custom-slide.css' | asset_url | stylesheet_tag }}
+<!-- Slider main container -->
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+    <!-- Slides -->
+    {% for item in section.blocks %}
+      <div class="swiper-slide">
+        <article class="swiper-content">
+          <h2>{{ item.settings.slide_text }}</h2>
+          <a href="{{ item.settings.url_slide }}">{{ item.settings.link_text }}</a>
+        </article>
+        <img src="{{ item.settings.slide_image | image_url }}" alt="slide-image">
+      </div>
+    {% endfor %}
+  </div>
+  <!-- If we need pagination -->
+  <div class="swiper-pagination"></div>
+</div>
+
+<script>
+  const swiper = new Swiper('.swiper', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+
+    // If we need pagination
+    {% comment %} pagination: {
+      el: '.swiper-pagination',
+    }, {% endcomment %}
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+  });
+</script>
+
+{% schema %}
+{
+  "name": "slider - custom",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "label",
+      "default": "por default",
+      "info": "info",
+      "placeholder": "I'm placeholder"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "slide",
+      "settings": [
+        {
+          "type": "text",
+          "id": "slide_text",
+          "label": "Título del slider"
+        },
+        {
+          "type": "image_picker",
+          "id": "slide_image",
+          "label": "selected image"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Ver más"
+        },
+        {
+          "type": "url",
+          "id": "url_slide",
+          "label": "url"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
