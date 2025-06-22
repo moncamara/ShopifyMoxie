@@ -11,7 +11,7 @@
 }
 .adidas-banner-section .adidas-banner-content {
     position: absolute;
-    width: 50%;
+    /* width: 50%; */
     padding: 15px;
 }
 .adidas-banner-section .adidas-banner-content.bottom {
