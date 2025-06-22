@@ -10,10 +10,22 @@
 {
   "sections": {
     "slider-banner": {
-      "type": "custom-slider"
+      "type": "custom-slider",
+      "settings": {
+        "text": "por default"
+      }
+    },
+    "collections_HXUPPz": {
+      "type": "collections",
+      "name": "t:general.collections_grid",
+      "settings": {
+        "grid_item_width": "collections--full",
+        "grid_gap": 10
+      }
     }
   },
   "order": [
-    "slider-banner"
+    "slider-banner",
+    "collections_HXUPPz"
   ]
 }
