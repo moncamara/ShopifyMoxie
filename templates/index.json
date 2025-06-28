@@ -10,10 +10,36 @@
 {
   "sections": {
     "slider-banner": {
-      "type": "custom-slider"
+      "type": "custom-slider",
+      "blocks": {
+        "slide_7AMUP3": {
+          "type": "slide",
+          "settings": {
+            "slide_text": "Slider Moni",
+            "slide_image": "shopify://shop_images/theme_cover_image.jpg",
+            "link_text": "Ver más",
+            "url_slide": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "slide_7AMUP3"
+      ],
+      "settings": {
+        "text": "por default"
+      }
+    },
+    "collections_HXUPPz": {
+      "type": "collections",
+      "name": "t:general.collections_grid",
+      "settings": {
+        "grid_item_width": "collections--full",
+        "grid_gap": 10
+      }
     }
   },
   "order": [
-    "slider-banner"
+    "slider-banner",
+    "collections_HXUPPz"
   ]
 }
