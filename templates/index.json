@@ -25,18 +25,36 @@
       "block_order": [
         "slide_7AMUP3"
       ],
+      "disabled": true,
       "settings": {
         "text": "por default"
+      }
+    },
+    "banner_adidas_H3Wjai": {
+      "type": "banner-adidas",
+      "name": "Banner-adidas",
+      "settings": {
+        "main-image": "shopify://shop_images/addidas.avif",
+        "title": "SALE | NEW SALE",
+        "subtitle": "un texto que describe algo",
+        "cta_url_1": "",
+        "cta_text_1": "Shop All",
+        "cta_url_2": "",
+        "cta_text_2": "Shop All",
+        "cta_url_3": "",
+        "cta_text_3": "Shop All",
+        "vertical_align": "bottom",
+        "horizontal_align": "left"
       }
     },
     "carrusell_tabs_FFbVc8": {
       "type": "carrusell-tabs",
       "blocks": {
-        "carrusel_tab_T9yEcg": {
+        "carrusel_tab_hjT6UC": {
           "type": "carrusel-tab",
           "settings": {
             "tab_title": "Colección 1",
-            "tab_collection": "frontpage"
+            "tab_collection": "automated-collection"
           }
         },
         "carrusel_tab_QM7h4a": {
@@ -55,34 +73,17 @@
         }
       },
       "block_order": [
-        "carrusel_tab_T9yEcg",
+        "carrusel_tab_hjT6UC",
         "carrusel_tab_QM7h4a",
         "carrusel_tab_tWrA6i"
       ],
       "name": "Carrusel Tabs",
       "settings": {}
-    },
-    "banner_adidas_H3Wjai": {
-      "type": "banner-adidas",
-      "name": "Banner-adidas",
-      "settings": {
-        "main-image": "shopify://shop_images/addidas.avif",
-        "title": "SALE | NEW SALE",
-        "subtitle": "un texto que describe algo",
-        "cta_url_1": "",
-        "cta_text_1": "Shop All",
-        "cta_url_2": "",
-        "cta_text_2": "Shop All",
-        "cta_url_3": "",
-        "cta_text_3": "Shop All",
-        "vertical_align": "bottom",
-        "horizontal_align": "left"
-      }
     }
   },
   "order": [
     "slider-banner",
-    "carrusell_tabs_FFbVc8",
-    "banner_adidas_H3Wjai"
+    "banner_adidas_H3Wjai",
+    "carrusell_tabs_FFbVc8"
   ]
 }
