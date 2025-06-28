@@ -11,6 +11,20 @@
   "sections": {
     "slider-banner": {
       "type": "custom-slider",
+      "blocks": {
+        "slide_7AMUP3": {
+          "type": "slide",
+          "settings": {
+            "slide_text": "Slider Moni",
+            "slide_image": "shopify://shop_images/theme_cover_image.jpg",
+            "link_text": "Ver más",
+            "url_slide": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "slide_7AMUP3"
+      ],
       "settings": {
         "text": "por default"
       }
