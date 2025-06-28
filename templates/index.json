@@ -40,6 +40,13 @@
     "carrusell_tabs_FFbVc8": {
       "type": "carrusell-tabs",
       "blocks": {
+        "carrusel_tab_T9yEcg": {
+          "type": "carrusel-tab",
+          "settings": {
+            "tab_title": "Colección 1",
+            "tab_collection": "frontpage"
+          }
+        },
         "carrusel_tab_QM7h4a": {
           "type": "carrusel-tab",
           "settings": {
@@ -53,19 +60,12 @@
             "tab_title": "Colección 3",
             "tab_collection": "primavera"
           }
-        },
-        "carrusel_tab_T9yEcg": {
-          "type": "carrusel-tab",
-          "settings": {
-            "tab_title": "Colección 1",
-            "tab_collection": "frontpage"
-          }
         }
       },
       "block_order": [
+        "carrusel_tab_T9yEcg",
         "carrusel_tab_QM7h4a",
-        "carrusel_tab_tWrA6i",
-        "carrusel_tab_T9yEcg"
+        "carrusel_tab_tWrA6i"
       ],
       "name": "Carrusel Tabs",
       "settings": {}
