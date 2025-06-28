@@ -1,10 +1,12 @@
 .carrusel-tabs-container {
-  /* Estilos generales si querés */
+  padding: 40px;
+  margin-top: 40px;
 }
 .tabs-titles {
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  justify-content: center;
 }
 .tab-title {
   cursor: pointer;
@@ -21,6 +23,11 @@
 }
 .tabs-content .tab-content.active {
   display: block;
+}
+.tab-content.active {
+  padding: 40px;
+  border-radius: 10px;
+  background: #eee;
 }
 .product-grid {
   display: grid;
