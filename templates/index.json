@@ -29,14 +29,6 @@
         "text": "por default"
       }
     },
-    "collections_HXUPPz": {
-      "type": "collections",
-      "name": "t:general.collections_grid",
-      "settings": {
-        "grid_item_width": "collections--full",
-        "grid_gap": 10
-      }
-    },
     "carrusell_tabs_FFbVc8": {
       "type": "carrusell-tabs",
       "blocks": {
@@ -69,11 +61,28 @@
       ],
       "name": "Carrusel Tabs",
       "settings": {}
+    },
+    "banner_adidas_H3Wjai": {
+      "type": "banner-adidas",
+      "name": "Banner-adidas",
+      "settings": {
+        "main-image": "shopify://shop_images/addidas.avif",
+        "title": "SALE | NEW SALE",
+        "subtitle": "un texto que describe algo",
+        "cta_url_1": "",
+        "cta_text_1": "Shop All",
+        "cta_url_2": "",
+        "cta_text_2": "Shop All",
+        "cta_url_3": "",
+        "cta_text_3": "Shop All",
+        "vertical_align": "bottom",
+        "horizontal_align": "left"
+      }
     }
   },
   "order": [
     "slider-banner",
-    "collections_HXUPPz",
-    "carrusell_tabs_FFbVc8"
+    "carrusell_tabs_FFbVc8",
+    "banner_adidas_H3Wjai"
   ]
 }
