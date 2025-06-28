@@ -36,10 +36,44 @@
         "grid_item_width": "collections--full",
         "grid_gap": 10
       }
+    },
+    "carrusell_tabs_FFbVc8": {
+      "type": "carrusell-tabs",
+      "blocks": {
+        "carrusel_tab_QM7h4a": {
+          "type": "carrusel-tab",
+          "settings": {
+            "tab_title": "Colección 2",
+            "tab_collection": "hydrogen"
+          }
+        },
+        "carrusel_tab_tWrA6i": {
+          "type": "carrusel-tab",
+          "settings": {
+            "tab_title": "",
+            "tab_collection": ""
+          }
+        },
+        "carrusel_tab_T9yEcg": {
+          "type": "carrusel-tab",
+          "settings": {
+            "tab_title": "Colección 1",
+            "tab_collection": "frontpage"
+          }
+        }
+      },
+      "block_order": [
+        "carrusel_tab_QM7h4a",
+        "carrusel_tab_tWrA6i",
+        "carrusel_tab_T9yEcg"
+      ],
+      "name": "Carrusel Tabs",
+      "settings": {}
     }
   },
   "order": [
     "slider-banner",
-    "collections_HXUPPz"
+    "collections_HXUPPz",
+    "carrusell_tabs_FFbVc8"
   ]
 }
