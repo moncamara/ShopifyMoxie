@@ -1,66 +1,66 @@
-<header>
-  <h2 class="header__title">
-    {{ shop.name | link_to: routes.root_url }}
-  </h2>
-
-  <div class="header__menu">
-    {% for link in section.settings.menu.links %}
-      {{ link.title | link_to: link.url }}
-    {% endfor %}
+<header class="header">
+  <!-- Logo -->
+  <div class="header__logo">
+    <a href="{{ routes.root_url }}">
+      <img
+        class="header__logo-image"
+        src="{{ 'logo.png' | asset_url }}"
+        alt="{{ shop.name }}"
+      >
+    </a>
   </div>
 
+  <!-- Buscador -->
+  <div class="header__search">
+    <form action="{{ routes.search_url }}" method="get" role="search" class="header__search-form">
+      <input
+        type="text"
+        name="q"
+        placeholder="Buscar producto, colección etc ..."
+        aria-label="Buscar"
+        class="header__search-input"
+      >
+      <button type="submit" class="header__search-button">
+        <span class="header__search-icon">
+          {{ 'search.svg' | inline_asset_content }}
+        </span>
+      </button>
+    </form>
+  </div>
+
+  <!-- Crédito -->
+  <div class="header__credit">
+    <a href="#" class="header__credit-button">Quiero mi crédito</a>
+  </div>
+
+  <!-- Información (con dos enlaces) -->
+  <div class="header__info">
+    <a href="#" class="header__info-help">¿Necesitas ayuda?</a>
+    <a href="#" class="header__info-info">Venta telefónica:<br>604 527 26 07 Ext: 2035</a>
+  </div>
+
+  <!-- Íconos -->
   <div class="header__icons">
+    <!-- Lista de íconos -->
+    <a href="#" class="header__icons-wishlist">
+      <img src="{{ 'icon-wishlist.svg' | asset_url }}" alt="Lista de deseos" class="header__icons-icon">
+    </a>
+
+    <a href="#" class="header__icons-bag">
+      <img src="{{ 'icon-bag.svg' | asset_url }}" alt="Bolsa de compras" class="header__icons-icon">
+    </a>
+
     {% if shop.customer_accounts_enabled %}
-      {{ 'icon-account.svg' | inline_asset_content | link_to: routes.account_url }}
+      <a href="{{ routes.account_url }}" class="header__icons-user">
+        <img src="{{ 'icon-user.svg' | asset_url }}" alt="Cuenta" class="header__icons-icon">
+      </a>
     {% endif %}
 
-    <a href="{{ routes.cart_url }}">
+    <a href="{{ routes.cart_url }}" class="header__icons-cart">
       {% if cart.item_count > 0 %}
-        <sup>{{ cart.item_count }}</sup>
+        <sup class="header__icons-cart-count">{{ cart.item_count }}</sup>
       {% endif %}
-
-      {{ 'icon-cart.svg' | inline_asset_content }}
+      <img src="{{ 'icon-cart.svg' | asset_url }}" alt="Carrito" class="header__icons-icon">
     </a>
   </div>
 </header>
-
-{% stylesheet %}
-  header {
-    height: 5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  header a {
-    position: relative;
-    text-decoration: none;
-    color: var(--color-foreground);
-  }
-  header a sup {
-    position: absolute;
-    left: 100%;
-    overflow: hidden;
-    max-width: var(--page-margin);
-  }
-  header svg {
-    width: 2rem;
-  }
-  header .header__menu,
-  header .header__icons {
-    display: flex;
-    gap: 1rem;
-  }
-{% endstylesheet %}
-
-{% schema %}
-{
-  "name": "t:general.header",
-  "settings": [
-    {
-      "type": "link_list",
-      "id": "menu",
-      "label": "t:labels.menu"
-    }
-  ]
-}
-{% endschema %}

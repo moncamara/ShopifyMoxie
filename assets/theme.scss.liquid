@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+#shopify-section-header-topbar{
+    display: flex !important;
+}
+.header-topbar {
+    width: 100%;
+    max-width: 1440px;
+    height: 60px;
+    background: #DA2128;
+    font-size: 14px;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+  
+    .topbar-slide {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    .topbar-image {
+      width: 20px;
+      height: auto;
+    }
+  
+    .topbar-left, .topbar-right {
+      font-size: 14px;
+    }
+  }
+  
+
+/*------- header -------- */
+.header {
+    width: 100%;
+    max-width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header__logo {
+    width: 164.48px;
+    padding: 9px 0;
+}
+
+.header__search {
+    width: 486px;
+    height: 36px;
+    border: 1px solid #606060;
+    border-radius: 99px;
+
+    .header__search-form {
+
+        display: flex;
+        background: #DA2128;
+        border-radius: 99px;
+
+        .header__search-input {
+            border: none;
+            padding: 0;
+            margin: 0;
+            padding-left: 10px;
+            width: 90%;
+            height: 34px;
+            border-radius: 99px 0 0 99px;
+        }
+
+        .header__search-input::placeholder {
+            color: #606060;
+            font-size: 11px;
+            opacity: 1;
+            line-height: 34;
+        }
+
+        .header__search-button {
+            width: 9%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background: transparent;
+
+            .header__search-icon svg {
+                width: 17px;
+                height: 17px;
+                color: #ffffff; // Este sí funciona
+            }
+        }
+
+    }
+
+}
+
+.header__credit {
+    width: 150.75px;
+    height: 30.92px;
+    background-color: #DA2128;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 58px;
+
+    .header__credit-button {
+        width: 100%;
+        color: #ffffff;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 11px;
+        display: block;
+        text-align: center;
+    }
+}
+
+.header__info {
+    width: 286px;
+    height: 23px;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+
+    .header__info-help, .header__info-info {
+        width: 50%;
+        color: #DA2128;
+        text-decoration: none;
+        cursor: pointer;
+        border-left: 1px solid red;
+        padding-left: 10px;
+    }
+
+}
+
+.header__icons {
+    display: flex;
+    gap: 17px;
+
+    .header__icons-wishlist {
+        width: 21px;
+        height: 19px;
+    }
+    .header__icons-bag {
+        width: 19px;
+        height: 19px;
+    }
+    .header__icons-user {
+        width: 19.95px;
+        height: 20.15px;
+    }
+    .header__icons-cart {
+        width: 21.88px;
+        height: 19.95px;
+    }
+}

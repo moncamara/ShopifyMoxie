@@ -5,6 +5,7 @@
     {% render 'css-variables' %}
 
     {% # Load and preload the critical CSS %}
+    {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
     {{ 'critical.css' | asset_url | stylesheet_tag: preload: true }}
     {{ 'swiper.min.css' | asset_url | stylesheet_tag }}
 
@@ -14,9 +15,18 @@
     {{ content_for_header }}
     <script src="{{ 'swiper.min.js' | asset_url }}"></script>
     <script src="{{ 'custom-tabs.js' | asset_url }}" defer="defer"></script>
+
+    {{ 'slick.css' | asset_url | stylesheet_tag }}
+    {{ 'slick-theme.css' | asset_url | stylesheet_tag }}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    {{ 'slick.min.js' | asset_url | script_tag }}
+
   </head>
 
   <body>
+    <!-- Topbar -->
+    {% section 'header-topbar' %}
+
     {% sections 'header-group' %}
 
     {{ content_for_layout }}

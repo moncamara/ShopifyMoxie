@@ -1,5 +1,4 @@
 {{ 'carrusel-tabs.css' | asset_url | stylesheet_tag }}
-{{ 'section.custom-slide.css' | asset_url | stylesheet_tag }}
 
 <div class="tabs-container">
   <section class="tabs-titles">
@@ -16,39 +15,89 @@
   </section>
 
   <section class="tabs-content">
-  {% for block in section.blocks %}
-    {% if block.settings.tab_collection != blank %}
-      {% assign collection = block.settings.tab_collection %}
-      <div
-        class="tab-content"
-        index="{{ forloop.index }}"
-      >
-        <h2>{{ collection.title }}</h2>
+    {% for block in section.blocks %}
+      {% if block.settings.tab_collection != blank %}
+        {% assign collection = block.settings.tab_collection %}
+        <div
+          class="tab-content"
+          index="{{ forloop.index }}"
+        >
+          <h2>{{ collection.title }}</h2>
 
-        {% if collection.products_count > 0 %}
-          <div class="product-grid">
-            {% for product in collection.products limit: 8 %}
-              <div class="product-card">
-                <a href="{{ product.url }}">
-                  <img
-                    src="{{ product.featured_image | image_url: width: 400 }}"
-                    alt="{{ product.title }}"
-                    loading="lazy"
-                  />
-                  <h3>{{ product.title }}</h3>
-                  <p>{{ product.price | money }}</p>
-                </a>
-              </div>
-            {% endfor %}
-          </div>
-        {% else %}
-          <p>No hay productos en esta colección.</p>
-        {% endif %}
-      </div>
-    {% endif %}
-  {% endfor %}
-</section>
+          {% if collection.products_count > 0 %}
+            <div class="product-slider">
+              {% for product in collection.products limit: 8 %}
+                {% comment %} ----------------------- {% endcomment %}
+                <div class="product-grid">
+                  <a href="{{ product.url }}">
+                    <img
+                      src="{{ product.featured_image | image_url: width: 400 }}"
+                      alt="{{ product.title }}"
+                      loading="lazy"
+                    >
+                    <h3>{{ product.title }}</h3>
+                    <p>{{ product.price | money }}</p>
+                  </a>
+                </div>
+                {% comment %} ----------------------- {% endcomment %}
+              {% endfor %}
+            </div>
+          {% else %}
+            <p>No hay productos en esta colección.</p>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endfor %}
+  </section>
 
+  <script>
+    $(document).ready(function () {
+      // Inicializa solo el primer tab
+      $('.tab-content[index="1"] .product-slider').slick({
+        slidesToShow: 3,
+        arrows: true,
+        dots: true,
+        infinite: false,
+      });
+
+      $('.tab-title').on('click', function () {
+        var index = $(this).attr('index');
+
+        $('.tab-title').removeClass('active');
+        $(this).addClass('active');
+
+        $('.tab-content').removeClass('active');
+        $('.tab-content[index="' + index + '"]').addClass('active');
+
+        // Inicializa el slick si no está ya inicializado
+        var $slider = $('.tab-content[index="' + index + '"] .product-slider');
+
+        if (!$slider.hasClass('slick-initialized')) {
+          $slider.slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            arrows: true,
+            dots: true,
+            infinite: false,
+            responsive: [
+              {
+                breakpoint: 1024,
+                settings: {
+                  slidesToShow: 2,
+                },
+              },
+              {
+                breakpoint: 600,
+                settings: {
+                  slidesToShow: 1,
+                },
+              },
+            ],
+          });
+        }
+      });
+    });
+  </script>
 </div>
 
 {% schema %}
